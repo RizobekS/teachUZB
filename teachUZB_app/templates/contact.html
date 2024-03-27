@@ -1,0 +1,61 @@
+{% extends 'components/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Контакты' %}{% endblock title %}
+
+{% block content %}
+<style>
+    input[type="text"], textarea, input[type="email"]{
+          outline: none;
+          box-shadow:none !important;
+          border:1px solid #a7a7a7 !important;
+}
+
+
+</style>
+
+<div class="row-fluid mb-5">
+    <div class=" gradient-custom" style="height:150px;">
+        <div class="d-flex align-items-end justify-content-center mb-3 text-white h-100">
+            <div class="mb-auto p-2"></div>
+            <div class="p-2"><h1 class="mb-3">{% trans 'Контакты' %}</h1></div>
+        </div>
+    </div>
+
+</div>
+<!-- ***** Contact Area Start ***** -->
+<section class="dento-contact-area mt-3 mb-5">
+    <div class="container">
+        <div class="row gradient-custom rounded-9 p-3">
+            <div class="col-12 col-md-6">
+                <div class="text-white rounded-9 gradient-custom-white p-5 h-100" data-aos="flip-right">
+                    <h5 class="">{% trans 'Адрес' %}</h5>
+                    <p>{% trans 'Ташкент, Узбекистан' %}</p>
+
+                    <h5>{% trans 'Телефон' %}</h5>
+                    <p><a href="tel:+998970179009" class="text-white">+99891 017-90-09</a></p>
+
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="text-white rounded-9 gradient-custom-white p-5 h-100" data-aos="flip-right">
+                    <h5>{% trans 'Адрес электронной почты' %}</h5>
+                    <p class=""><a href="mailto:teachforuzbinfo@gmail.com" class="text-white">teachforuzbinfo@gmail.com</a></p>
+
+                    <h5 class=" mb-2">{% trans 'Социальные сети' %}</h5>
+
+                    <a href="javascript:;" target="_blank" class="me-4 text-reset">
+                        <i class="fab fa-xl fa-telegram"></i>
+                    </a>
+                    <a href="https://www.instagram.com/teachforuzbekistan"
+                       target="_blank"
+                       class="me-4 text-reset">
+                        <i class="fab fa-xl fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Contact Area End ***** -->
+{% endblock content %}

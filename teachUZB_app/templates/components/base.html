@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title -->
+    <title>{% spaceless %} Teach for Uzbekistan {% block title %}{% endblock title %}{% endspaceless %}</title>
+    <meta property="og:title"
+          content='{% spaceless %}{% block og_title %} Teach for Uzbekistan {% endblock og_title %}{% endspaceless %}'/>
+    <meta property="og:description"
+          content='{% spaceless %}{% block description %}Teach for Uzbekistan{% endblock description %}{% endspaceless %}'/>
+    <meta property="og:image"
+          content="https://{% spaceless %}{% block image %}teachforuzbekistan.org{% static '/teachUZB_app/core-img/logo_teach.png' %}{% endblock image %}{% endspaceless %}">
+    <meta property="og:type" content="website"/>
+    <meta name="keywords" content="Teach for Uzbekistan">
+
+    <!-- Google Search Engine -->
+    <link rel="alternate" hreflang="en" href="https://teachforuzbekistan.org/en"/>
+    <link rel="alternate" hreflang="ru" href="https://teachforuzbekistan.org/ru"/>
+    <link rel="alternate" hreflang="uz" href="https://teachforuzbekistan.org/uz"/>
+    <!-- Favicon -->
+    <link rel="icon" href="{% static '/teachUZB_app/core-img/logo_teach.png' %}">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{% static '/teachUZB_app/css/style.css' %}">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+    <!-- MDB -->
+    <link href="{% static '/teachUZB_app/css/mdb.min.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6D277SSEER"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-6D277SSEER');
+    </script>
+</head>
+<body>
+<!--Top header end-->
+<div class="simple-spinner"></div>
+
+
+<!--Manage header start-->
+<div class=" row-fluid sticky-top">
+    <div class="">
+        <nav class="navbar navbar-expand-lg navbar-dark blur blur-mask top-0 z-index-fixed shadow position-absolute py-2 start-0 end-0">
+            <!-- Container wrapper -->
+            <div class="container">
+                <a class="navbar-brand p-0" href="{% url 'home' %}">
+                    <img src="{% static '/teachUZB_app/core-img/logo_teach.png' %}" alt="Teach for Uzbekistan" width="150px">
+
+                </a>
+                <!-- Toggle button -->
+                <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-toggle="collapse"
+                        data-mdb-target="#navbarCenteredExample"
+                        aria-controls="navbarCenteredExample"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                >
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+                    <div class="navbar-nav text-center d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <a class="quick-link" href="{% url 'about' %}">{% trans 'О проекте' %}</a>
+                        <a class="quick-link" href="{% url 'full_registration' %}">{% trans 'Стать участником' %}</a>
+<!--                        <a class="quick-link" href="{% url 'team' %}">Команда</a>-->
+<!--                        <a class="quick-link" href="{% url 'home' %}">Галерея</a>-->
+                        <a class="quick-link" href="{% url 'contact' %}">{% trans 'Контакты' %}</a>
+<!--                        <a class="quick-link" href="{% url 'feedback' %}">Отзывы</a>-->
+<!--                        <a class="quick-link" href="{% url 'faq' %}">FAQ</a>-->
+                    </div>
+                    <div class="me-5 text-center d-flex align-items-center justify-content-center" data-aos="zoom-in">
+                        <form action="{% url 'set_language' %}" method="POST">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                            <select class="form-control form-control-sm text-center text-white" name="language" id="language"
+                                    onchange="this.form.submit();" required>
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% for lang in LANGUAGES %}
+                                <option class="text-black" value="{{ lang.0 }}"
+                                        {% if lang.0 == LANGUAGE_CODE %}
+                                        selected
+                                        {% endif %}>
+                                    {{ lang.1 }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                        {% if LANGUAGE_CODE == 'en' %}
+                        <div><i class="flag flag-united-kingdom m-0"></i></div>
+                        {% elif LANGUAGE_CODE == 'uz' %}
+                        <div><i class="flag flag-uzbekistan m-0"></i></div>
+                        {% elif LANGUAGE_CODE == 'ru' %}
+                        <div><i class="flag flag-russia m-0"></i></div>
+                        {% endif %}
+                    </div>
+<!--                    {% if request.user.is_authenticated %}-->
+<!--                    <div class="dropdown">-->
+<!--                          <a href="javascript:;" class="dropdown-toggle text-white" type="button" id="dropdownMenu2" data-mdb-toggle="dropdown" aria-expanded="false">-->
+<!--                            <i style="color: white;" class="fa fa-user"></i>{{ user.first_name }}-->
+<!--                          </a>-->
+<!--                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">-->
+<!--                            <li><a href="{% url 'users-profile' %}" class="dropdown-item text-capitalize" type="button">{% translate 'Profile' %}</a></li>-->
+<!--                            <li><a href="{% url 'logout' %}" class="dropdown-item text-capitalize" type="button">{% translate 'Logout' %}</a></li>-->
+<!--                          </ul>-->
+<!--                    </div>-->
+<!--                    {% else %}-->
+<!--                    <a style="color: white;" href="{% url 'login' %}"><i style="color: white;" class="fa fa-user"></i> {% translate 'Sign in' %}</a>-->
+                    {% endif %}
+                </div>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+    </div>
+</div>
+
+<!--Manage header end-->
+
+
+{% block content %} {% endblock content %}
+<button
+        type="button"
+        class="btn btn-warning btn-floating btn-lg mb-5 z-index"
+        id="btn-back-to-top" style="z-index: 999;">
+    <i class="p-0 fas fa-arrow-up"></i>
+</button>
+
+{% include 'components/_footer.html' %}
+
+<!--<script src="{% static '/jpiu_app/js/bootstrap.bundle.min.js' %}"></script>-->
+<!-- MDB -->
+<script type="text/javascript" src="{% static '/teachUZB_app/js/mdb.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/teachUZB_app/js/mdb.umd.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/teachUZB_app/js/mdb.es.min.js' %}"></script>
+<script type="text/javascript" src="{% static '/teachUZB_app/js/button_top.js' %}"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</body>
+</html>

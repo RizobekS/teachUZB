@@ -1,0 +1,39 @@
+{% extends 'components/base.html' %}
+
+{% block title %}FAQ{% endblock title %}
+
+{% block content %}
+<style>p{
+        color: black;
+    }
+
+
+</style>
+
+<div class="row-fluid mb-5">
+    <div class=" gradient-custom" style="height:300px;">
+        <div class="d-flex align-items-center justify-content-center mb-3 text-white h-100">
+            <div class="mb-auto p-2"></div>
+            <div class="p-2"><h1 class="mb-3">FAQ</h1></div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-between mt-2 mb-5 ">
+            <div class="col-sm-12 col-md-6 align-self-center" data-aos="fade-up">
+            <h1 class="text-warning">Frequently asked questions</h1>
+            <p>Didn't find your answer in the FAQ?<a href="{% url 'faq' %}"
+                                                                       style="color: #3F8FFF;">
+                Contact our support team</a>.</p>
+        </div>
+        <div class="col-sm-12 col-md-6" data-aos="flip-up">
+            {% for q_and_a in questions_and_answers %}
+            <h5>{{ q_and_a.question }}</h5>
+            <p>{{ q_and_a.answer }}</p>
+            <p>&nbsp;</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

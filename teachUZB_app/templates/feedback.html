@@ -1,0 +1,101 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}Отзывы{% endblock title %}
+
+{% block content %}
+<div class="row-fluid mb-5">
+    <div class=" gradient-custom" style="height:300px;">
+        <div class="d-flex align-items-center justify-content-center mb-3 text-white h-100">
+            <div class="mb-auto p-2"></div>
+            <div class="p-2"><h1 class="mb-3">Отзывы</h1></div>
+        </div>
+    </div>
+
+</div>
+
+<!--The cost ection-->
+<section class="mt-5">
+    <div class="mb-5">
+        {% if messages %}
+        <div class="row">
+            <div class="col-sm-12 col-sm-offset-3">
+                {% for message in messages %}
+                {% if name != "Упс, что-то пошло не так!" %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <h6><strong>{{ name }}</strong>,большое спасибо за ваше сообщение! Мы свяжемся с Вами в
+                        скором времени!</h6>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+                {% else %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h6><strong>Упс, что-то пошло не так!</strong></h6>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+            <div class="gradient-custom rounded-9 d-flex justify-content-center align-items-center ">
+                <div class="col-12 col-sm-12 col-md-6">
+                    <div class="container d-flex justify-content-center align-items-center h-100">
+                        <div class="gradient-custom-white p-5 rounded-9 col-12">
+                            <form action="{% url 'feedback' %}" method="post">{% csrf_token %}
+                                <div class="row g-1">
+                                    <div class="col-12"><h3 class="text-center text-warning">Оставьте отзыв</h3></div>
+                                    <div class="col-12">
+                                        <!-- Name input -->
+                                        <div data-mdb-input-init class="form-outline mb-3">
+                                            <input type="text" name="name" id="form8Example1"
+                                                   class="form-control text-white"/>
+                                            <label class="form-label text-white" for="form8Example1">Имя</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- Email input -->
+                                        <div data-mdb-input-init class="form-outline mb-3">
+                                            <input type="email" name="email" id="form8Example2"
+                                                   class="form-control text-white"/>
+                                            <label class="form-label text-white" for="form8Example1">Почта</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- Phone input -->
+                                        <div data-mdb-input-init class="form-outline mb-3">
+                                            <input type="text" name="phone" id="form9Example3"
+                                                   class="form-control text-white"
+                                                   required/>
+                                            <label class="form-label text-white" for="form8Example2">Телефон</label>
+                                        </div>
+                                    </div>
+                                    <!-- Message input -->
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                    <textarea name="text" class="form-control text-white" id="form8Example7"
+                                              rows="4"></textarea>
+                                        <label class="form-label text-white" for="form8Example7">Сообщение</label>
+                                    </div>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <button data-mdb-ripple-init type="submit" class="btn btn-warning mb-4">
+                                            Отправить
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-image col-12 col-md-6 rounded-9 d-none d-lg-block">
+                    <img src="{% static 'teachUZB_app/bg-img/feedback.webp' %}" alt="Teach for Uzbekistan feedback"
+                         class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--The cost section end-->
+{% endblock %}

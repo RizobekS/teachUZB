@@ -1,0 +1,256 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}Registration {% endblock title %}
+
+{% block content %}
+    <style>
+        .custom_form_input {
+            margin-top: 15px;
+        }
+    </style>
+
+    <div class="row-fluid mb-5">
+        <div class=" gradient-custom" style="height:300px;">
+            <div class="d-flex align-items-center justify-content-center mb-3 text-white h-100">
+                <div class="mb-auto p-2"></div>
+                <div class="p-2"><h1 class="mb-3">Регистрация для участия</h1></div>
+            </div>
+        </div>
+
+    </div>
+    <section>
+        <div class="container">
+            {% if messages %}
+                <div class="row">
+                    <div class="col-sm-12 col-sm-offset-3">
+                        {% for message in messages %}
+                            {% if name != "Упс, что-то пошло не так!" %}
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <h6><strong>{{ name }}</strong>, большое спасибо за ваше сообщение! Мы свяжемся с
+                                        Вами в скором
+                                        времени!</h6>
+                                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                                    </button>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <h6><strong>Упс, что-то пошло не так!</strong></h6>
+                                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                                    </button>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="mb-5 d-flex justify-content-center">
+                <div class="row col-md-8 gradient-custom rounded-9 p-3">
+                    <!-- Full Registration Form -->
+                    <div class="col-12  bg-light rounded-9">
+                        <div class="contact-form">
+                            <!-- Section Heading -->
+                            <div class="text-center mt-2 mb-3">
+                                <h2 class="text-warning">Заполните поля</h2>
+                            </div>
+                            <!-- Form -->
+                            <form action="{% url 'full_registration' %}" method="post" onsubmit="return checkLength()"
+                                  enctype="multipart/form-data">{% csrf_token %}
+                                <h3>Personal</h3>
+                                <div class="custom_form_input">
+                                    Gender:
+                                    <select class="form-select" name="personal_gender">
+                                        <option>Select</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    Date of birth:
+                                    <input name="personal_dateofbirth" type="date" class="form-control">
+                                </div>
+                                <div class="custom_form_input">
+                                    Mobile No:
+                                    <input name="personal_mobileno" type="number" class="form-control">
+                                </div>
+                                <div class="custom_form_input">
+                                    Citezenship:
+                                    <input name="personal_citezenship" type="text" class="form-control">
+                                </div>
+                                <div class="custom_form_input">
+                                    In which city do you live currently?
+                                    <input name="personal_which_city" type="text" class="form-control">
+                                </div>
+                                <div class="custom_form_input">
+                                    Registered Address:
+                                    <input name="personal_registered_address" type="text" class="form-control">
+                                </div>
+
+                                <br>
+                                <h3>Education</h3>
+                                <div id="education_fields">
+                                    <!-- Пустые поля для образования -->
+                                    <input type="text" class="form-control mt-4" name="education_1_institution"
+                                           placeholder="Institution">
+                                    <input type="text" class="form-control mt-1" name="education_1_degree"
+                                           placeholder="Degree">
+                                    <input type="date" class="form-control mt-1" name="education_1_start_date"
+                                           placeholder="Start Date">
+                                    <input type="date" class="form-control mt-1 mb-1" name="education_1_end_date"
+                                           placeholder="End Date">
+                                </div>
+                                <button type="button" class="btn btn-warning my-3" id="add_education">Add Education
+                                </button>
+                                <h3>Work Experience</h3>
+                                <div id="experience_fields">
+                                    <!-- Пустые поля для опыта работы -->
+                                    <input type="text" class="form-control mt-4"
+                                           name="experience_1_company" placeholder="Company">
+                                    <input type="text" class="form-control mt-1"
+                                           name="experience_1_position" placeholder="Position">
+                                    <input type="date" class="form-control mt-1"
+                                           name="experience_1_start_date" placeholder="Start Date">
+                                    <input type="date" class="form-control mt-1"
+                                           name="experience_1_end_date" placeholder="End Date">
+                                </div>
+                                <button type="button" class="btn btn-warning my-3" id="add_experience">Add Experience
+                                </button>
+                                <h3>Social activities</h3>
+                                <p>Give a brief overview of these activities if you have been engaged in social projects
+                                    or
+                                    organizations in the last 5 years:</p>
+                                <div id="social_activities_fields">
+                                    <!-- Пустые поля для социального мероприятия -->
+                                    <input type="text" class="form-control mt-4" name="social_1_company"
+                                           placeholder="Company">
+                                    <input type="text" class="form-control mt-1" name="social_1_activity"
+                                           placeholder="Type of activity">
+                                </div>
+                                <button type="button" class="btn btn-warning my-3" id="add_social_activities">Add Social
+                                    activities
+                                </button>
+                                <h3>Participation in program</h3>
+                                <div class="custom_form_input">
+                                    Where get information:
+                                    <select name="where_get_information" class="form-select">
+                                        <option value="website">Website</option>
+                                        <option value="social_media">Social Media</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    Work full time:
+                                    <select name="work_full_time" class="form-select">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    Participate in summer:
+                                    <select name="participate_in_summer" class="form-select">
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    Why do you want to become a fellow of the Teacher for Uzbekistan program? ? What do
+                                    you think is your value for children and for the school? How can the experience of
+                                    fellowship in the program benefit you? Please give a detailed answer in the form of
+                                    an essay. *:
+                                    <p id="textarea_alert_text" style="color: darkred; display: none">Matn uzunligi 500
+                                        va 1300 belgidan iborat bo'lishi kerak!</p>
+                                    <textarea id="mytextarea" name="why_teach_uzb" class="form-control" cols="30"
+                                              rows="10"></textarea>
+                                </div>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <button type="submit" value="Register" class="btn mb-3 mt-3 btn-warning"
+                                            data-aos="zoom-in-up">Отправить
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function checkLength() {
+            var textArea = document.getElementById("mytextarea");
+            var textarea_alert = document.getElementById("textarea_alert_text");
+            var textLength = textArea.value.length;
+
+            if (textLength < 500 || textLength > 1300) {
+                textarea_alert.style.display = "block";
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <script>
+        let educationFormCount = 2;
+        let experienceFormCount = 2;
+        let socialFormCount = 2;
+
+        function addEducationField() {
+            const form = document.createElement('div');
+            form.innerHTML = `
+            <input type="text" class="form-control mt-4" name="education_${educationFormCount}_institution" placeholder="Institution">
+            <input type="text" class="form-control mt-1" name="education_${educationFormCount}_degree" placeholder="Degree">
+            <input type="date" class="form-control mt-1" name="education_${educationFormCount}_start_date" placeholder="Start Date">
+            <input type="date" class="form-control mt-1 mb-1" name="education_${educationFormCount}_end_date" placeholder="End Date">
+            <button type="button" class="btn mb-3 mt-3 btn-danger remove_education">Remove</button>
+        `;
+            document.getElementById('education_fields').appendChild(form);
+            educationFormCount++;
+        }
+
+        function addExperienceField() {
+            const form = document.createElement('div');
+            form.innerHTML = `
+
+            <input type="text" class="form-control mt-4" name="experience_${experienceFormCount}_company" placeholder="Company">
+            <input type="text" class="form-control mt-1" name="experience_${experienceFormCount}_position" placeholder="Position">
+            <input type="date" class="form-control mt-1" name="experience_${experienceFormCount}_start_date" placeholder="Start Date">
+            <input type="date" class="form-control mt-1" name="experience_${experienceFormCount}_end_date" placeholder="End Date">
+            <button type="button" class="btn mb-3 mt-3 btn-danger remove_experience">Remove</button>
+        `;
+            document.getElementById('experience_fields').appendChild(form);
+            experienceFormCount++;
+        }
+
+        function addSocialField() {
+            const form = document.createElement('div');
+            form.innerHTML = `
+
+            <input type="text" class="form-control mt-4" name="social_${socialFormCount}_company" placeholder="Company">
+            <input type="text" class="form-control mt-1" name="social_${socialFormCount}_activity" placeholder="Type of activity">
+            <button type="button" class="btn mb-3 mt-3 btn-danger remove_experience">Remove</button>
+        `;
+            document.getElementById('social_activities_fields').appendChild(form);
+            experienceFormCount++;
+        }
+
+        document.getElementById('add_education').addEventListener('click', addEducationField);
+
+        document.getElementById('add_experience').addEventListener('click', addExperienceField);
+
+        document.getElementById('add_social_activities').addEventListener('click', addSocialField);
+
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('remove_education')) {
+                event.target.parentNode.remove();
+                educationFormCount--;
+            } else if (event.target.classList.contains('remove_experience')) {
+                event.target.parentNode.remove();
+                experienceFormCount--;
+            }
+        });
+
+
+    </script>
+{% endblock content %}

@@ -1,0 +1,164 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+
+{% block content %}
+    <section>
+        <div class="bg-image"
+             style="background-image: url({% static 'teachUZB_app/bg-img/banner_teach.webp' %}); height: 950px; top: 0;">
+
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
+                <div class="d-flex justify-content-center align-items-center mb-3 text-white h-100">
+                    <div class="p-2 text-center" data-aos="fade-up"><h1 class="mb-3 display-1">Teach for Uzbekistan</h1>
+                        <p class="col-12 display-6">
+                            {% trans 'Учись, делись знанием, веди в будущее!' %}
+                        </p>
+                        <a href="{% url 'full_registration' %}" class="btn btn-warning mb-5 btn-rounded text-white">
+                            {% trans 'Стать участником' %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-image"
+             style="background-image: url({% static 'teachUZB_app/bg-img/info_project.webp' %}); height: 500px; top: 1px;">
+
+            <div class="mask" style="background-color: rgba(0, 0, 0, 0.3)">
+                <div class="container d-flex justify-content-center align-items-center mb-3 text-white h-100">
+                    <div class="p-2" data-aos="fade-up">
+                        <p class="col-12 h4">
+                            {{ about1.subtitle|safe }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-5">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                {% if about1_sections %}
+                    {% for rs in about1_sections %}
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6">
+                            <div class="col-12 card border border-warning shadow-0 mb-3 me-5" data-aos="flip-up">
+
+                                <div class="card-body">
+                                    <h5 class="card-title text-warning">{{ rs.title }} </h5>
+                                    <p class="card-text">{{ rs.subtitle }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="bg-warning">
+            <div class="p-5 d-flex justify-content-center align-items-center">
+                <div class="text-center text-white">
+                    <h2 class="display-6">{% trans 'Как могут выглядеть следующие два года вашей карьеры?' %}</h2>
+                    <h2 class="display-6">{% trans 'Расскажем подробнее:' %}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <br>
+            <br>
+            <span class="text-center" data-aos="fade-up">{{ about2.subtitle|safe }}</span>
+            <div class="">
+                <div class="timeline">
+                    {% if about2_sections %}
+                        {% for rs in about2_sections %}
+                            <div class="checkpoint ">
+                                <div class="" data-aos="flip-up">
+                                    <h5 class="text-warning">{{ rs.title }}</h5>
+                                    <p>{{ rs.subtitle }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="bg-gradient" style="background-color: #0474AA;">
+            <div class="p-5 d-flex justify-content-center align-items-center">
+                <div class="text-center text-white" data-aos="fade-left">
+                    <h2>{% trans '3 задачи проекта' %}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container ">
+            <div class="">
+                <div class="row d-flex justify-content-between mt-5 mb-5">
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class=" card shadow-0"
+                             style="background-image: url({% static 'teachUZB_app/bg-img/1.png' %});background-repeat: no-repeat;  background-size: auto; height: 80vh; top: 1px;">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+
+                                <h3 class="card-text">{% trans 'Улучшить академическую успеваемость школьников' %}</h3>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class=" card shadow-0"
+                             style="background-image: url({% static 'teachUZB_app/bg-img/2.png' %});background-repeat: no-repeat;  background-size: auto; height: 80vh; top: 1px;">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+
+                                <h3 class="card-text">{% trans 'Снизить дефицит педагогических кадров в региональных школах' %}</h3>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="card shadow-0"
+                             style="background-image: url({% static 'teachUZB_app/bg-img/3.png' %});background-repeat: no-repeat;  background-size: auto; height: 80vh; top: 1px;">
+                            <div class="card-body d-flex justify-content-between align-items-center">
+
+                                <h3 class="card-text">{% trans 'Внедрить лучшие образовательные практики' %}</h3>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--approved feedbacks-->
+    {% if approved_feedbacks %}
+        <section>
+            <div class="container-fluid overflow-auto">
+                <h1 class="text-warning text-center mt-5">{% trans 'Отзывы' %}</h1>
+                <div class="d-flex flex-nowrap overflow-x-scroll mt-5 justify-content-around">
+                    {% for feedback in approved_feedbacks %}
+                        <div class="card border border-warning shadow-0 mb-3 me-5 col-8 col-sm-6 col-md-4 col-lg-3">
+                            <div class="card-header bg-transparent border-warning">
+                                <h3>{{ feedback.name }}</h3>
+                                <!--                    <div class="text-muted">{{ feedback.date }}</div>-->
+                            </div>
+                            <div class="card-body text-warning">
+                                <p class="card-text">{{ feedback.text }}</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-success text-muted">{{ feedback.date|naturaltime }}</div>
+                        </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+    {% endif %}
+    <!--approved feedbacks end-->
+{% endblock content %}

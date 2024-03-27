@@ -1,0 +1,342 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load humanize %}
+{% block title %}{% trans 'Full Registration' %} {% endblock title %}
+
+{% block content %}
+    <style>
+        .custom_form_input {
+            margin-top: 15px;
+        }
+    </style>
+
+    <div class="row-fluid mb-5">
+        <div class=" gradient-custom" style="height:150px;">
+            <div class="d-flex align-items-end justify-content-center mb-3 text-white h-100">
+                <div class="mb-auto p-2"></div>
+                <div class="p-2"><h1 class="mb-3">{% trans 'Регистрация для участия' %}</h1></div>
+            </div>
+        </div>
+
+    </div>
+    <section>
+        <div class="container">
+            {% if messages %}
+                <div class="row">
+                    <div class="col-sm-12 col-sm-offset-3">
+                        {% for message in messages %}
+                            {% if name != "Упс, что-то пошло не так!" %}
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <h6><strong>{{ name }}</strong>, {% trans 'большое спасибо за ваше сообщение! Мы свяжемся с Вами в скором времени!' %}</h6>
+                                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                                    </button>
+                                </div>
+                            {% else %}
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    <h6><strong>{% trans 'Упс, что-то пошло не так!' %}</strong></h6>
+                                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                                    </button>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            <div class="mb-5 d-flex justify-content-center">
+                <div class="row col-md-8 gradient-custom rounded-9 p-3">
+                    <!-- Full Registration Form -->
+                    <div class="col-12  bg-light rounded-9">
+                        <div class="contact-form">
+                            <!-- Section Heading -->
+                            <div class="text-center mt-2 mb-3">
+                                <h2 class="text-warning">{% trans 'Заполните поля' %}</h2>
+                            </div>
+                            <!-- Form -->
+                            <form action="{% url 'full_registration' %}" method="post" id="myForm"
+                                  enctype="multipart/form-data">{% csrf_token %}
+                                <div class="custom_form_input">
+                                    {% trans 'Имя' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="user_first_name" type="text" class="form-control" required>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Фамилия' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="user_last_name" type="text" class="form-control" required>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Электронная почта' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="user_email" type="email" class="form-control" required>
+                                </div>
+
+                                <br>
+
+                                <div class="custom_form_input form-outline">
+                                    {% trans 'Пол' %}: <span style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <select class="form-select" name="personal_gender" required>
+                                        <option value="male">{% trans 'Мужчина' %}</option>
+                                        <option value="female">{% trans 'Женщина' %}</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Дата рождения' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="personal_dateofbirth" type="date" class="form-control" required>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Мобильный телефон' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="personal_mobileno" type="number" class="form-control" required>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Гражданство' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="personal_citezenship" type="text" class="form-control" required>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Место жительства на момент подачи заявки' %}?
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="personal_which_city" type="text" class="form-control" required>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Адрес прописки' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <input name="personal_registered_address" type="text" class="form-control" required>
+                                </div>
+
+                                <br>
+                                <div id="education_fields">
+                                    <h3>{% trans 'Образование' %}</h3>
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <!-- Пустые поля для образования -->
+                                    <input type="text" class="form-control mt-4" name="education_1_institution" required
+                                           placeholder="{% trans 'Вуз' %}">
+                                    <input type="text" class="form-control mt-1" name="education_1_degree" required
+                                           placeholder="{% trans 'Степень' %}">
+                                    <input type="text" class="form-control mt-1" name="education_1_faculty" required
+                                           placeholder="{% trans 'Факультет' %}">
+                                    <input type="text" class="form-control mt-1" name="education_1_specialization" required
+                                           placeholder="{% trans 'Специализация' %}">
+                                    <input type="date" class="form-control mt-1" name="education_1_start_date" required
+                                           placeholder="{% trans 'Дата начала' %}">
+                                    <input type="date" class="form-control mt-1 mb-1" name="education_1_end_date"
+                                           required
+                                           placeholder="{% trans 'Дата окончания' %}">
+                                    <label class="small mb-1">{% trans 'Скан диплома о высшем образовании' %}:</label>
+                                    <input type="file" name="education_1_file" accept="application/pdf" class="form-control" required>
+                                </div>
+                                <button type="button" class="btn btn-warning my-3" id="add_education">
+                                    {% trans 'Добавить ещё' %}
+                                </button>
+                                <h3>{% trans 'Опыт работы' %}</h3>
+                                <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                <div id="experience_fields">
+                                    <!-- Пустые поля для опыта работы -->
+                                    <input type="text" class="form-control mt-4" required
+                                           name="experience_1_company" placeholder="{% trans 'Организация' %}">
+                                    <input type="text" class="form-control mt-1" required
+                                           name="experience_1_position" placeholder="{% trans 'Должность' %}">
+                                    <input type="date" class="form-control mt-1" required
+                                           name="experience_1_start_date" placeholder="Start Date">
+                                    <input type="date" class="form-control mt-1" required
+                                           name="experience_1_end_date" placeholder="End Date">
+                                </div>
+                                <button type="button" class="btn btn-warning my-3" id="add_experience">
+                                    {% trans 'Добавить ещё' %}
+                                </button>
+                                <h3>{% trans 'Общественная деятельность' %}</h3>
+                                <p>{% trans 'Укажите, пожалуйста, в каких социальных проектах вы принимали учатсие за последние 5 лет' %}</p>
+                                <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                <div id="social_activities_fields">
+                                    <!-- Пустые поля для социального мероприятия -->
+                                    <input type="text" class="form-control mt-4" name="social_1_company" required
+                                           placeholder="{% trans 'Компания' %}">
+                                    <input type="text" class="form-control mt-1" name="social_1_activity" required
+                                           placeholder="{% trans 'Тип активности' %}">
+                                </div>
+                                <button type="button" class="btn btn-warning my-3" id="add_social_activities">
+                                    {% trans 'Добавить ещё' %}
+                                </button>
+                                <h3>{% trans 'Участие в программе' %}</h3>
+                                <div class="custom_form_input">
+                                    {% trans 'Как вы узнали о проекте' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <select name="where_get_information" class="form-select" required>
+                                        <option value="website">{% trans 'Вебсайт' %}</option>
+                                        <option value="social_media">{% trans 'Социальные сети' %}</option>
+                                        <option value="other">{% trans 'Другое' %}</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Сможете ли вы работать полный рабочий день, принимая участия в Teach for Uzebkistan?' %}:
+                                    <span id="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <select name="work_full_time" class="form-select" required>
+                                        <option value="yes">{% trans 'Да' %}</option>
+                                        <option value="no">{% trans 'Нет' %}</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Сможете ли вы принять участие в Летнем институте (июль - август 2024, около 5 недель, Ташкент)?' %}:
+                                    <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
+                                    <select name="participate_in_summer" class="form-select" required>
+                                        <option value="yes">{% trans 'Да' %}</option>
+                                        <option value="no">{% trans 'Нет' %}</option>
+                                    </select>
+                                </div>
+                                <div class="custom_form_input">
+                                    {% trans 'Почему вы хотите стать стипендиатом программы «Teach for Uzbekistan»? Пожалуйста, дайте развернутый ответ в форме эссе. *:' %}
+                                    <p id="textarea_alert_text" style="color: darkred; display: none">{% trans 'Количества символов должны быть больше 1000 и меньше 3000' %}</p>
+                                    <div class="form-outline" data-mdb-input-init>
+                                    <textarea id="mytextarea" name="why_teach_uzb" class="form-control" cols="30"
+                                              data-mdb-showcounter="true" maxlength="3000" required
+                                              rows="10"></textarea>
+                                        <div class="form-helper"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="custom_form_input">
+                                    {% trans 'Как вы думаете, в чем ваша ценность для детей и школы? Пожалуйста, дайте развернутый ответ в форме эссе. *:' %}
+                                    <p id="textarea_alert_text" style="color: darkred; display: none">{% trans 'Количества символов должны быть больше 1000 и меньше 3000' %}</p>
+                                    <div class="form-outline" data-mdb-input-init>
+                                    <textarea id="mytextarea" name="value_to_the_children" class="form-control" cols="30"
+                                              data-mdb-showcounter="true" maxlength="3000" required
+                                              rows="10"></textarea>
+                                        <div class="form-helper"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="custom_form_input">
+                                    {% trans 'Какую пользу вам может принести опыт участия в программе? Пожалуйста, дайте развернутый ответ в форме эссе. *:' %}
+                                    <p id="textarea_alert_text" style="color: darkred; display: none">{% trans 'Количества символов должны быть больше 1000 и меньше 3000' %}</p>
+                                    <div class="form-outline" data-mdb-input-init>
+                                    <textarea id="mytextarea" name="benefit_from_your_experience_in_the_program" class="form-control" cols="30"
+                                              data-mdb-showcounter="true" maxlength="3000" required
+                                              rows="10"></textarea>
+                                        <div class="form-helper"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <p class="text-center">{% trans 'Нажимая кнопку «отправить» вы подвтерждаете своё согласие' %}</p>
+                                <div class="d-flex justify-content-center">
+                                    <button onclick="validateInputs()" type="submit" value="Register"
+                                            class="btn mb-3 mt-2 btn-warning">
+                                        {% trans 'Отправить' %}
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function validateInputs() {
+            var form = document.getElementById('myForm');
+            var divs = form.querySelectorAll('.custom_form_input')
+            var error_spans = document.querySelectorAll('.error_span');
+            var errorMessage = document.getElementById('errorMessage');
+            var isValid = true;
+
+            for (var y = 0; y < error_spans.length; y++) {
+                error_spans[y].style.display = "none";
+            }
+
+            for (var i = 0; i < divs.length; i++) {
+                var div_input = divs[i].querySelector("input")
+                var div_span = divs[i].querySelector("span")
+
+                if (!div_input.value) {
+                    isValid = false;
+                    div_span.style.display = "block";
+                    break
+                }
+            }
+
+            if (isValid) {
+                var textArea = document.getElementById("mytextarea");
+                var textarea_alert = document.getElementById("textarea_alert_text");
+                var textLength = textArea.value.length;
+
+                if (textLength < 350 || textLength > 500) {
+                    textarea_alert.style.display = "block";
+                    return false;
+                }
+                form.submit();
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+
+    <script>
+        let educationFormCount = 2;
+        let experienceFormCount = 2;
+        let socialFormCount = 2;
+
+        function addEducationField() {
+            const form = document.createElement('div');
+            form.innerHTML = `
+            <input type="text" class="form-control mt-4" name="education_${educationFormCount}_institution" placeholder="{% trans 'Вуз' %}">
+            <input type="text" class="form-control mt-1" name="education_${educationFormCount}_degree" placeholder="{% trans 'Степень' %}">
+            <input type="text" class="form-control mt-1" name="education_${educationFormCount}_faculty" placeholder="{% trans 'Факультет' %}">
+            <input type="text" class="form-control mt-1" name="education_${educationFormCount}_specialization" placeholder="{% trans 'Специализация' %}">
+            <input type="date" class="form-control mt-1" name="education_${educationFormCount}_start_date" placeholder="{% trans 'Дата начала' %}">
+            <input type="date" class="form-control mt-1 mb-1" name="education_${educationFormCount}_end_date" placeholder="{% trans 'Дата окончания' %}">
+            <label class="small mb-1">{% trans 'Скан диплома о высшем образовании' %}:</label>
+            <input type="file" name="education_${educationFormCount}_file" accept="application/pdf" class="form-control">
+            <button type="button" class="btn mb-3 mt-3 btn-danger remove_education">{% trans 'Удалить' %}</button>
+        `;
+            document.getElementById('education_fields').appendChild(form);
+            educationFormCount++;
+        }
+
+        function addExperienceField() {
+            const form = document.createElement('div');
+            form.innerHTML = `
+
+            <input type="text" class="form-control mt-4" name="experience_${experienceFormCount}_company" placeholder="{% trans 'Компания' %}">
+            <input type="text" class="form-control mt-1" name="experience_${experienceFormCount}_position" placeholder="{% trans 'Должность' %}">
+            <input type="date" class="form-control mt-1" name="experience_${experienceFormCount}_start_date" placeholder="{% trans 'Дата начала' %}">
+            <input type="date" class="form-control mt-1" name="experience_${experienceFormCount}_end_date" placeholder="{% trans 'Дата окончания' %}">
+            <button type="button" class="btn mb-3 mt-3 btn-danger remove_experience">{% trans 'Удалить' %}</button>
+        `;
+            document.getElementById('experience_fields').appendChild(form);
+            experienceFormCount++;
+        }
+
+        function addSocialField() {
+            const form = document.createElement('div');
+            form.innerHTML = `
+
+            <input type="text" class="form-control mt-4" name="social_${socialFormCount}_company" placeholder="{% trans 'Компания' %}">
+            <input type="text" class="form-control mt-1" name="social_${socialFormCount}_activity" placeholder="{% trans 'Тип активности' %}">
+            <button type="button" class="btn mb-3 mt-3 btn-danger remove_experience">{% trans 'Удалить' %}</button>
+        `;
+            document.getElementById('social_activities_fields').appendChild(form);
+            experienceFormCount++;
+        }
+
+        document.getElementById('add_education').addEventListener('click', addEducationField);
+
+        document.getElementById('add_experience').addEventListener('click', addExperienceField);
+
+        document.getElementById('add_social_activities').addEventListener('click', addSocialField);
+
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('remove_education')) {
+                event.target.parentNode.remove();
+                educationFormCount--;
+            } else if (event.target.classList.contains('remove_experience')) {
+                event.target.parentNode.remove();
+                experienceFormCount--;
+            }
+        });
+
+
+    </script>
+{% endblock content %}

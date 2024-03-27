@@ -1,0 +1,228 @@
+{% extends 'components/base.html' %}
+{% block title %}Team{% endblock title %}
+
+{% block content %}
+<div class="row-fluid mb-5">
+    <div class=" gradient-custom" style="height:300px;">
+        <div class="d-flex align-items-center justify-content-center mb-3 text-white h-100">
+            <div class="mb-auto p-2"></div>
+            <div class="p-2"><h1 class="mb-3">Команда</h1></div>
+        </div>
+    </div>
+
+</div>
+<section class="mt-5 mb-5">
+    <div class="container">
+        {% if staff_team %}
+        <div class="row mt-3">
+            {% for staff_member in staff_team %}
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="card border border-warning rounded-9 text-center h-100" data-aos="flip-up">
+                    <div class="bg-image hover-overlay rounded-9" data-mdb-ripple-color="light">
+                        <img src="{{ staff_member.image.url }}" alt="Teach for Uzbekistan team" class="img-fluid"/>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                                {{ staff_member.name }}
+                        </h5>
+                        <p class="card-text text-warning">
+                                {{ staff_member.title }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="col-12">
+            <h1 class="text-center text-warning">Здесь пока ничего нет!</h1>
+        </div>
+        {% endif %}
+        {% if staff_tashkent %}
+        <div class="section-heading text-center">
+            <h4>Central Project Implementation Unit Office RIDP and SRDP</h4>
+            <div class="line"></div>
+        </div>
+        <div class="row mt-3">
+            {% for staff_member in staff_tashkent %}
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="card text-center" data-aos="flip-up">
+                    <div class="bg-image hover-overlay rounded-9" data-mdb-ripple-color="light">
+                        <img src="{{ staff_member.image.url }}" alt="JPIU Staff Image" class="img-fluid"/>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.name_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.name_ru }}
+                                {% else %}
+                                {{ staff_member.name }}
+                                {% endif %}
+                        </h5>
+                        <p class="card-text">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.title_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.title_ru }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ staff_member.title_uz }}
+                                {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if staff_jizzakh %}
+        <div class="section-heading text-center">
+            <h4>Jizzakh interregional Project Implementation Unit office</h4>
+            <div class="line"></div>
+        </div>
+        <div class="row mt-30">
+            {% for staff_member in staff_jizzakh %}
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="card text-center" data-aos="flip-up">
+                    <div class="bg-image hover-overlay rounded-9" data-mdb-ripple-color="light">
+                        <img src="{{ staff_member.image.url }}" alt="JPIU Staff Image" class="img-fluid"/>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.name_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.name_ru }}
+                                {% else %}
+                                {{ staff_member.name }}
+                                {% endif %}
+                        </h5>
+                        <p class="card-text">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.title_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.title_ru }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ staff_member.title_uz }}
+                                {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if staff_namangan %}
+        <div class="section-heading text-center">
+            <h4>Namangan interregional Project Implementation Unit office</h4>
+            <div class="line"></div>
+        </div>
+        <div class="row mt-30">
+            {% for staff_member in staff_namangan %}
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="card text-center" data-aos="flip-up">
+                    <div class="bg-image hover-overlay rounded-9" data-mdb-ripple-color="light">
+                        <img src="{{ staff_member.image.url }}" alt="JPIU Staff Image" class="img-fluid"/>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.name_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.name_ru }}
+                                {% else %}
+                                {{ staff_member.name }}
+                                {% endif %}
+                        </h5>
+                        <p class="card-text">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.title_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.title_ru }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ staff_member.title_uz }}
+                                {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if staff_buxoro %}
+        <div class="section-heading text-center">
+            <h4>Bukhara interregional Project Implementation Unit office</h4>
+            <div class="line"></div>
+        </div>
+        <div class="row mt-30">
+            {% for staff_member in staff_buxoro %}
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="card text-center" data-aos="flip-up">
+                    <div class="bg-image hover-overlay rounded-9" data-mdb-ripple-color="light">
+                        <img src="{{ staff_member.image.url }}" alt="JPIU Staff Image" class="img-fluid"/>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.name_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.name_ru }}
+                                {% else %}
+                                {{ staff_member.name }}
+                                {% endif %}
+                        </h5>
+                        <p class="card-text">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.title_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.title_ru }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ staff_member.title_uz }}
+                                {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% if staff_qqr %}
+        <div class="section-heading text-center">
+            <h4>Khorezm interregional Project Implementation Unit office</h4>
+            <div class="line"></div>
+        </div>
+        <div class="row mt-30">
+            {% for staff_member in staff_qqr %}
+            <div class="col-12 col-sm-6 col-md-4 mb-5">
+                <div class="card text-center" data-aos="flip-up">
+                    <div class="bg-image hover-overlay rounded-9" data-mdb-ripple-color="light">
+                        <img src="{{ staff_member.image.url }}" alt="JPIU Staff Image" class="img-fluid"/>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.name_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.name_ru }}
+                                {% else %}
+                                {{ staff_member.name }}
+                                {% endif %}
+                        </h5>
+                        <p class="card-text">
+                            {% if LANGUAGE_CODE == 'en' %}
+                                {{ staff_member.title_en }}
+                                {% elif LANGUAGE_CODE == 'ru' %}
+                                {{ staff_member.title_ru }}
+                                {% elif LANGUAGE_CODE == 'uz' %}
+                                {{ staff_member.title_uz }}
+                                {% endif %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}

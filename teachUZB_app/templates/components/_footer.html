@@ -1,0 +1,99 @@
+{% load static %}
+{% load i18n %}
+<!-- Footer -->
+<footer class="text-center text-lg-start text-white">
+    <div class="row-fluid">
+        <div class="bg-light">
+            <section class="pt-3">
+                <div class="container-fluid text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Social media -->
+                        <div class="col-sm-3 col-md-3 col-lg-4 col-xl-3 text-center mx-auto mb-4">
+
+                            <a href="{% url 'home' %}"><img src="{% static '/teachUZB_app/core-img/logo_teach.png' %}"
+                                                            alt="Logo Teach for Uzbekistan" width="50%"></a>
+
+                            <div class="text-dark">
+                                <a href="javascript:;" target="_blank" class="me-4 text-reset">
+                                    <i class="fab fa-xl fa-telegram"></i>
+                                </a>
+                                <a href="https://www.instagram.com/teachforuzbekistan"
+                                   target="_blank"
+                                   class="me-4 text-reset">
+                                    <i class="fab fa-xl fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Social media -->
+
+                        <!-- Links -->
+                        <div class="col-sm-1 col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase text-dark fw-bold mb-4">
+                                {% trans 'Ссылки' %}
+                            </h6>
+                            <div class="row-fluid col-12 opening-hours__child">
+                                <div class="text-dark">
+                                    <p>
+                                        <a href="{% url 'about' %}" class="">{% trans 'О проекте' %}</a>
+                                    </p>
+                                    <p>
+                                        <a href="{% url 'full_registration' %}" class="">
+                                            {% trans 'Стать участником' %}
+                                        </a>
+                                    </p>
+                                    <!--                                    <p>-->
+                                    <!--                                        <a href="{% url 'team' %}" class="">Команда</a>-->
+                                    <!--                                    </p>-->
+                                    <p>
+                                        <a href="{% url 'contact' %}" class="">{% trans 'Контакты' %}</a>
+                                    </p>
+                                    <!--                                    <p>-->
+                                    <!--                                        <a href="{% url 'feedback' %}" class="">Отзывы</a>-->
+                                    <!--                                    </p>-->
+                                    <!--                                    <p>-->
+                                    <!--                                        <a href="{% url 'faq' %}" class="">FAQ</a>-->
+                                    <!--                                    </p>-->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Links -->
+
+                        <!-- Contacts -->
+                        <div class="col-sm-3 col-md-3 col-lg-2 col-xl-3 mx-auto mb-md-0 mb-4 text-dark">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                {% trans 'Контакты' %}
+                            </h6>
+                            <p>
+                                <i class="fas fa-map-marker-alt me-3"></i>
+                                <span>{% trans 'Ташкент, Узбекистан' %}</span>
+                            </p>
+                            <p>
+                                <a href="mailto:teachforuzbinfo@gmail.com" class=""><i
+                                        class="fas fa-envelope me-3"></i>
+                                    <span>teachforuzbinfo@gmail.com</span></a>
+                            </p>
+                            <p style="color: white;"><a href="tel:+998970179009" class=""><i
+                                    class="fas fa-phone me-3"></i>+99891 017-90-09</a></p>
+                            <p>{% trans 'При использовании информации сайта ссылка на источник обязательна' %}</p>
+                        </div>
+                        <!-- Contacts -->
+                    </div>
+                    <!-- Grid row -->
+                </div>
+            </section>
+        </div>
+        <!-- Copyright -->
+        <div class="text-center pt-3 bg-dark">
+            © Teach for Uzbekistan
+            <script>document.write(new Date().getFullYear());</script>
+        </div>
+        <!-- Copyright -->
+        <div class="text-center text-muted bg-dark">
+            Powered by:
+            <a href="https://t.me/WEBadiko" target="_blank" class="text-info">WEBadiko</a>
+        </div>
+</footer>
+<!-- Footer -->

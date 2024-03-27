@@ -1,0 +1,94 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block title %}Принять участие {% endblock title %}
+
+{% block content %}
+<div class="row-fluid mb-5">
+    <div class=" gradient-custom" style="height:300px;">
+        <div class="d-flex align-items-center justify-content-center mb-3 text-white h-100">
+            <div class="mb-auto p-2"></div>
+            <div class="p-2"><h1 class="mb-3">Принять участие</h1></div>
+        </div>
+    </div>
+
+</div>
+<section>
+    <div class="container">
+        {% if messages %}
+        <div class="row">
+            <div class="col-sm-12 col-sm-offset-3">
+                {% for message in messages %}
+                {% if name != "Упс, что-то пошло не так!" %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <h6><strong>{{ name }}</strong>, большое спасибо за ваше сообщение! Мы свяжемся с Вами в скором
+                        времени!</h6>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+                {% else %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <h6><strong>Упс, что-то пошло не так!</strong></h6>
+                    <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    </button>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        <div class="mb-5 d-flex justify-content-center">
+            <div class="row col-md-8 gradient-custom rounded-9 p-3">
+
+                <!-- Contact Information -->
+                <!-- Contact Form -->
+                <div class="col-12  bg-light rounded-9">
+                    <div class="contact-form">
+                        <!-- Section Heading -->
+                        <div class="text-center mt-2 mb-3">
+                            <h2 class="text-warning">Принять участие</h2>
+                            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+                        </div>
+                        <!-- Form -->
+                        <form action="{% url 'contract_in' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <!-- Name input -->
+                            <div class="form-outline mb-3" data-aos="zoom-in-up">
+                                <input type="text" id="form4Example1" name="name" class="form-control" required/>
+                                <label class="form-label" for="form4Example1">Имя</label>
+                            </div>
+                            <!-- SureName input -->
+                            <div class="form-outline mb-3" data-aos="zoom-in-up">
+                                <input type="text" id="form4Example2" name="sur_name" class="form-control" required/>
+                                <label class="form-label" for="form4Example2">Фамилия</label>
+                            </div>
+                            <!-- Phone input -->
+                            <div data-mdb-input-init class="form-outline mb-3">
+                                <input type="text" name="phone" id="form4Example3" class="form-control"
+                                       required/>
+                                <label class="form-label" for="form4Example3">Телефон</label>
+                            </div>
+
+                            <!-- Email input -->
+                            <div class="form-outline mb-3" data-aos="zoom-in-up">
+                                <input type="email" id="form4Example4" name="email" class="form-control" required/>
+                                <label class="form-label" for="form4Example4">Ваша электронная почта</label>
+                            </div>
+
+                            <input type="hidden" name="address" value=""><!--FOR CHECKING PURPOSES-->
+                            <!-- Submit button -->
+                            <input type="checkbox" checked disabled ><span>Принимаю обработку <a href="#!" class="text-warning">персональных данных</a> для оставления заявки.</span>
+                            <div class="d-flex justify-content-center">
+                                <button type="submit" class="btn mb-3 mt-3 btn-warning"
+                                        data-aos="zoom-in-up">Отправить
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
