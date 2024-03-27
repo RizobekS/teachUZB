@@ -95,7 +95,7 @@ msgid "Ссылки"
 msgstr "Havolalar"
 
 msgid "При использовании информации сайта ссылка на источник обязательна"
-msgstr "Saytdagi maʼlumotlaridan foydalanganda manbaga havola qilish lozim"
+msgstr "Saytdagi maʼlumotlaridan foydalanganda manbaaga havola qilish lozim"
 
 #: .\teachUZB_app\templates\components\_footer.html:50
 #: .\teachUZB_app\templates\components\_footer.html:67
@@ -137,7 +137,7 @@ msgstr "Telefon"
 
 #: .\teachUZB_app\templates\contact.html:42
 msgid "Адрес электронной почты"
-msgstr "Pochta"
+msgstr "Elektron pochta"
 
 #: .\teachUZB_app\templates\contact.html:45
 #: .\teachUZB_app\templates\full_registration.html:168
