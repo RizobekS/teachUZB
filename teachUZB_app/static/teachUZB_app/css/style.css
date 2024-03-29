@@ -360,7 +360,8 @@ i{
     padding: 1.5em;
 }
 
-.checkpoint:first-child::after {
+@media (min-width: 1150px) {
+    .checkpoint:first-child::after {
     content: '';
     background: #fff;
     box-shadow: 0 0 0.5em #FA9E1A;
@@ -370,31 +371,28 @@ i{
     top: 0%;
     transform: translateX(-3.5em);
     border-radius: 50%;
-}
+    }
+    .checkpoint:nth-child(odd):last-child::after {
+        content: '';
+        position: absolute;
+        bottom: -25px;
+        left: 0%;
+        transform: translateX(-50%) rotate(180deg);
+        border-width: 20px;
+        border-style: solid;
+        border-color: transparent transparent #888 transparent;
+    }
 
-/* Стиль для нечетных элементов */
-.checkpoint:nth-child(odd):last-child::after {
-    content: '';
-    position: absolute;
-
-    bottom: -25px; /* Вы можете настроить это значение в зависимости от ваших потребностей */
-    left: 0%;
-    transform: translateX(-50%) rotate(180deg);
-    border-width: 20px;
-    border-style: solid;
-    border-color: transparent transparent #888 transparent;
-}
-
-/* Стиль для четных элементов */
-.checkpoint:nth-child(even):last-child::after {
-    content: '';
-    position: absolute;
-    bottom: -25px;
-    left: 100%;
-    transform: translateX(-50%) rotate(180deg);
-    border-width: 20px;
-    border-style: solid;
-    border-color: transparent transparent #888 transparent;
+    .checkpoint:nth-child(even):last-child::after {
+        content: '';
+        position: absolute;
+        bottom: -25px;
+        left: 100%;
+        transform: translateX(-50%) rotate(180deg);
+        border-width: 20px;
+        border-style: solid;
+        border-color: transparent transparent #888 transparent;
+    }
 }
 
 .checkpoint:nth-child(odd){
