@@ -4,9 +4,9 @@
 {% load i18n %}
 
 {% block content %}
-    <section>
+    <section style="overflow: hidden">
         <div class="bg-image"
-             style="background-image: url({% static 'teachUZB_app/bg-img/banner_teach.webp' %}); height: 950px; top: 0;">
+             style="background-image: url({% static 'teachUZB_app/bg-img/banner_teach.webp' %}); height: 950px; top: 1;">
 
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6)">
                 <div class="d-flex justify-content-center align-items-center mb-3 text-white h-100">
@@ -21,8 +21,9 @@
                 </div>
             </div>
         </div>
+    </section>
+    <section style="overflow: hidden">
         <div class="row-fluid">
-
             <div class="bg-gradient" style="background-color: #0474AA;">
                 <div class="container d-flex justify-content-center align-items-center mb-3 text-white h-100">
                     <div class="p-2" data-aos="fade-up">
@@ -35,13 +36,13 @@
         </div>
     </section>
 
-    <section class="mt-5">
+    <section class="mt-5" style="overflow: hidden">
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="row ">
                 {% if about1_sections %}
                     {% for rs in about1_sections %}
                         <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-                            <div class="col-12 card border border-warning shadow-0 mb-3 me-5" data-aos="flip-up">
+                            <div class="col-12 card border border-warning shadow-0 mb-3" data-aos="flip-up">
 
                                 <div class="card-body">
                                     <h5 class="card-title text-warning">{{ rs.title }} </h5>
@@ -54,7 +55,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section style="overflow: hidden">
         <div class="bg-warning">
             <div class="p-5 d-flex justify-content-center align-items-center">
                 <div class="text-center text-white">
@@ -83,7 +84,7 @@
         </div>
     </section>
 
-    <section>
+    <section style="overflow: hidden">
         <div class="bg-gradient" style="background-color: #0474AA;">
             <div class="p-5 d-flex justify-content-center align-items-center">
                 <div class="text-center text-white" data-aos="fade-left">
