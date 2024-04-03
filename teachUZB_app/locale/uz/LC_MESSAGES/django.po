@@ -288,7 +288,7 @@ msgstr "Ijtimoiy faoliyat"
 
 #: .\teachUZB_app\templates\full_registration.html:150
 msgid ""
-"Укажите, пожалуйста, в каких социальных проектах вы принимали учатсие за "
+"Укажите, пожалуйста, в каких социальных проектах вы принимали участие за "
 "последние 5 лет"
 msgstr ""
 "Ohirgi 5 yil Ichida ijtimoiy loyiha yoki tashkilotlarda faoliyat olib borgan "
@@ -323,7 +323,7 @@ msgstr "Boshqa"
 
 #: .\teachUZB_app\templates\full_registration.html:173
 msgid ""
-"Сможете ли вы работать полный рабочий день, принимая участия в Teach for "
+"Сможете ли вы работать полный рабочий день, принимая участие в Teach for "
 "Uzebkistan?"
 msgstr "Teach for Uzbekistan qatnashchisi sifatida to‘liq bandlik bilan ishlash imkoniyatingiz bormi?"
 

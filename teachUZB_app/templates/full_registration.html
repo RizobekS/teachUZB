@@ -125,7 +125,7 @@
                                            required
                                            placeholder="{% trans 'Дата окончания' %}">
                                     <label class="small mb-1">{% trans 'Скан диплома о высшем образовании' %}:</label>
-                                    <input type="file" name="education_1_file" accept="application/pdf" class="form-control" required>
+                                    <input type="file" name="education_1_file" accept="application/pdf" class="form-control">
                                 </div>
                                 <button type="button" class="btn btn-warning my-3" id="add_education">
                                     {% trans 'Добавить ещё' %}
@@ -147,7 +147,7 @@
                                     {% trans 'Добавить ещё' %}
                                 </button>
                                 <h3>{% trans 'Общественная деятельность' %}</h3>
-                                <p>{% trans 'Укажите, пожалуйста, в каких социальных проектах вы принимали учатсие за последние 5 лет' %}</p>
+                                <p>{% trans 'Укажите, пожалуйста, в каких социальных проектах вы принимали участие за последние 5 лет' %}</p>
                                 <span class="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
                                 <div id="social_activities_fields">
                                     <!-- Пустые поля для социального мероприятия -->
@@ -170,7 +170,7 @@
                                     </select>
                                 </div>
                                 <div class="custom_form_input">
-                                    {% trans 'Сможете ли вы работать полный рабочий день, принимая участия в Teach for Uzebkistan?' %}:
+                                    {% trans 'Сможете ли вы работать полный рабочий день, принимая участие в Teach for Uzebkistan?' %}:
                                     <span id="error_span" style="color: darkred; display: none;">{% trans 'Заполните поле' %}</span>
                                     <select name="work_full_time" class="form-select" required>
                                         <option value="yes">{% trans 'Да' %}</option>

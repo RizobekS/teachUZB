@@ -291,7 +291,7 @@ msgstr "Social activities"
 
 #: .\teachUZB_app\templates\full_registration.html:150
 msgid ""
-"Укажите, пожалуйста, в каких социальных проектах вы принимали учатсие за "
+"Укажите, пожалуйста, в каких социальных проектах вы принимали участие за "
 "последние 5 лет"
 msgstr ""
 "Give a brief overview of these activities if you have been engaged in "
@@ -326,7 +326,7 @@ msgstr "Other"
 
 #: .\teachUZB_app\templates\full_registration.html:173
 msgid ""
-"Сможете ли вы работать полный рабочий день, принимая участия в Teach for "
+"Сможете ли вы работать полный рабочий день, принимая участие в Teach for "
 "Uzebkistan?"
 msgstr ""
 "Are you ready to work full-time from September 1, 2024, without "
