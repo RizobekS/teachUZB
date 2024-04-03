@@ -124,7 +124,7 @@
                                     <input type="date" class="form-control mt-1 mb-1" name="education_1_end_date"
                                            required
                                            placeholder="{% trans 'Дата окончания' %}">
-                                    <label class="small mb-1">{% trans 'Скан диплома о высшем образовании' %}:</label>
+                                    <label class="small mb-1">{% trans 'Скан диплома о высшем образовании или CV, если диплом ещё не получен' %}:</label>
                                     <input type="file" name="education_1_file" accept="application/pdf" class="form-control">
                                 </div>
                                 <button type="button" class="btn btn-warning my-3" id="add_education">
@@ -218,7 +218,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <p class="text-center">{% trans 'Нажимая кнопку «отправить» вы подвтерждаете своё согласие' %}</p>
+                                <p class="text-center">{% trans 'Нажимая кнопку «отправить» вы подтверждаете своё согласие' %}</p>
                                 <div class="d-flex justify-content-center">
                                     <button onclick="validateInputs()" type="submit" value="Register"
                                             class="btn mb-3 mt-2 btn-warning">

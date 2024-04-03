@@ -256,7 +256,7 @@ msgstr ""
 
 #: .\teachUZB_app\templates\full_registration.html:127
 #: .\teachUZB_app\templates\full_registration.html:290
-msgid "Скан диплома о высшем образовании"
+msgid "Скан диплома о высшем образовании или CV, если диплом ещё не получен"
 msgstr ""
 
 #: .\teachUZB_app\templates\full_registration.html:131
@@ -362,7 +362,7 @@ msgid ""
 msgstr ""
 
 #: .\teachUZB_app\templates\full_registration.html:221
-msgid "Нажимая кнопку «отправить» вы подвтерждаете своё согласие"
+msgid "Нажимая кнопку «отправить» вы подтверждаете своё согласие"
 msgstr ""
 
 #: .\teachUZB_app\templates\full_registration.html:225
