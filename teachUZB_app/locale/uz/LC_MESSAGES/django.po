@@ -260,8 +260,8 @@ msgstr "Tugash sanasi"
 
 #: .\teachUZB_app\templates\full_registration.html:127
 #: .\teachUZB_app\templates\full_registration.html:290
-msgid "Скан диплома о высшем образовании или CV, если диплом ещё не получен"
-msgstr "Diplom nusxasi yoki hali diplom bo'lmasa, CV"
+msgid "Скан диплома о высшем образовании или CV, если диплом ещё не получен. Поле не является обязательным для заполнения! pdf, doc, docx, jpg"
+msgstr "Diplom nusxasi yoki hali diplom bo'lmasa, CV. Maydon ixtiyoriy! pdf, doc, docx, jpg"
 
 #: .\teachUZB_app\templates\full_registration.html:131
 #: .\teachUZB_app\templates\full_registration.html:147

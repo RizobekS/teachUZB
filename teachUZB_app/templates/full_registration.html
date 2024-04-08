@@ -124,8 +124,8 @@
                                     <input type="date" class="form-control mt-1 mb-1" name="education_1_end_date"
                                            required
                                            placeholder="{% trans 'Дата окончания' %}">
-                                    <label class="small mb-1">{% trans 'Скан диплома о высшем образовании или CV, если диплом ещё не получен' %}:</label>
-                                    <input type="file" name="education_1_file" accept="application/pdf" class="form-control">
+                                    <label class="small mb-1">{% trans 'Скан диплома о высшем образовании или CV, если диплом ещё не получен. Поле не является обязательным для заполнения! pdf, doc, docx, jpg' %}:</label>
+                                    <input type="file" name="education_1_file" accept=".jpg, .doc, .docx, application/pdf" class="form-control">
                                 </div>
                                 <button type="button" class="btn btn-warning my-3" id="add_education">
                                     {% trans 'Добавить ещё' %}

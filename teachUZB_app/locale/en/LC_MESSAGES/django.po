@@ -263,8 +263,8 @@ msgstr "End date"
 
 #: .\teachUZB_app\templates\full_registration.html:127
 #: .\teachUZB_app\templates\full_registration.html:290
-msgid "Скан диплома о высшем образовании или CV, если диплом ещё не получен"
-msgstr "Scan of diploma or CV if there’s no diploma yet"
+msgid "Скан диплома о высшем образовании или CV, если диплом ещё не получен. Поле не является обязательным для заполнения! pdf, doc, docx, jpg"
+msgstr "Scan of diploma or CV if there’s no diploma yet. Optional field! pdf, doc, docx, jpg"
 
 #: .\teachUZB_app\templates\full_registration.html:131
 #: .\teachUZB_app\templates\full_registration.html:147
