@@ -96,6 +96,7 @@ class PersonalData(models.Model):
     citizenship = models.CharField(max_length=100, null=True, blank=True)
     which_city = models.CharField(max_length=100, null=True)
     registered_address = models.CharField(max_length=255, null=True)
+    language = models.CharField(max_length=100, null=True)
     entry_date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     # for moderator
@@ -167,9 +168,9 @@ class ParticipationInProgram(models.Model):
     where_get_information = models.CharField(max_length=100)
     participate_in_summer = models.CharField(max_length=100, null=True)
     work_full_time = models.CharField(max_length=100, null=True)
-    why_teach_uzb = models.TextField(max_length=500, null=True)
-    value_to_the_children = models.TextField(max_length=500, null=True)
-    benefit_from_your_experience_in_the_program = models.TextField(max_length=500, null=True)
+    why_teach_uzb = models.TextField(max_length=3000, null=True)
+    value_to_the_children = models.TextField(max_length=3000, null=True)
+    benefit_from_your_experience_in_the_program = models.TextField(max_length=3000, null=True)
 
 
 class Contact(models.Model):

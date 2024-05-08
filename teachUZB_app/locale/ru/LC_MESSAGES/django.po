@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-26 22:46-0700\n"
+"POT-Creation-Date: 2024-05-08 00:32-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,35 +48,35 @@ msgstr "Полная регистрация"
 msgid "Full Registration"
 msgstr "Полная регистрация"
 
-#: .\teachUZB_app\models.py:120 .\teachUZB_app\models.py:121
+#: .\teachUZB_app\models.py:121 .\teachUZB_app\models.py:122
 msgid "Education"
 msgstr "Обучение"
 
-#: .\teachUZB_app\models.py:141 .\teachUZB_app\models.py:142
+#: .\teachUZB_app\models.py:142 .\teachUZB_app\models.py:143
 msgid "Work Experience"
 msgstr "Опыт работы"
 
-#: .\teachUZB_app\models.py:153 .\teachUZB_app\models.py:154
+#: .\teachUZB_app\models.py:154 .\teachUZB_app\models.py:155
 msgid "Social Activities"
 msgstr "Социальные мероприятия"
 
-#: .\teachUZB_app\models.py:163 .\teachUZB_app\models.py:164
+#: .\teachUZB_app\models.py:164 .\teachUZB_app\models.py:165
 msgid "Participation In Program"
 msgstr "Участие в программе"
 
-#: .\teachUZB_app\models.py:177
+#: .\teachUZB_app\models.py:178
 msgid "Contact"
 msgstr "Контакты"
 
-#: .\teachUZB_app\models.py:178
+#: .\teachUZB_app\models.py:179
 msgid "Contacts"
 msgstr "Контакты"
 
-#: .\teachUZB_app\models.py:206
+#: .\teachUZB_app\models.py:207
 msgid "Team"
 msgstr "Команда"
 
-#: .\teachUZB_app\models.py:207
+#: .\teachUZB_app\models.py:208
 msgid "Teams"
 msgstr "Команда"
 
@@ -85,6 +85,10 @@ msgstr "Команда"
 #: .\teachUZB_app\templates\components\_footer.html:39
 #: .\teachUZB_app\templates\components\base.html:77
 msgid "О проекте"
+msgstr ""
+
+#: .\teachUZB_app\templates\components\_footer.html:34
+msgid "Ссылки"
 msgstr ""
 
 #: .\teachUZB_app\templates\components\_footer.html:43
@@ -104,6 +108,10 @@ msgstr ""
 #: .\teachUZB_app\templates\components\_footer.html:71
 #: .\teachUZB_app\templates\contact.html:33
 msgid "Ташкент, Узбекистан"
+msgstr ""
+
+#: .\teachUZB_app\templates\components\_footer.html:80
+msgid "При использовании информации сайта ссылка на источник обязательна"
 msgstr ""
 
 #: .\teachUZB_app\templates\components\base.html:116
@@ -136,7 +144,7 @@ msgid "Адрес электронной почты"
 msgstr ""
 
 #: .\teachUZB_app\templates\contact.html:45
-#: .\teachUZB_app\templates\full_registration.html:168
+#: .\teachUZB_app\templates\full_registration.html:191
 msgid "Социальные сети"
 msgstr ""
 
@@ -144,234 +152,240 @@ msgstr ""
 msgid "Регистрация для участия"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:31
-msgid "большое спасибо за ваше сообщение! Мы свяжемся с Вами в скором времени!"
-msgstr ""
-
-#: .\teachUZB_app\templates\full_registration.html:37
+#: .\teachUZB_app\templates\full_registration.html:38
 msgid "Упс, что-то пошло не так!"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:53
+#: .\teachUZB_app\templates\full_registration.html:54
 msgid "Заполните поля"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:59
+#: .\teachUZB_app\templates\full_registration.html:60
 msgid "Имя"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:60
-#: .\teachUZB_app\templates\full_registration.html:65
-#: .\teachUZB_app\templates\full_registration.html:70
-#: .\teachUZB_app\templates\full_registration.html:77
-#: .\teachUZB_app\templates\full_registration.html:85
-#: .\teachUZB_app\templates\full_registration.html:90
-#: .\teachUZB_app\templates\full_registration.html:95
-#: .\teachUZB_app\templates\full_registration.html:100
-#: .\teachUZB_app\templates\full_registration.html:105
-#: .\teachUZB_app\templates\full_registration.html:112
-#: .\teachUZB_app\templates\full_registration.html:134
-#: .\teachUZB_app\templates\full_registration.html:151
-#: .\teachUZB_app\templates\full_registration.html:165
+#: .\teachUZB_app\templates\full_registration.html:61
+#: .\teachUZB_app\templates\full_registration.html:66
+#: .\teachUZB_app\templates\full_registration.html:71
+#: .\teachUZB_app\templates\full_registration.html:78
+#: .\teachUZB_app\templates\full_registration.html:86
+#: .\teachUZB_app\templates\full_registration.html:91
+#: .\teachUZB_app\templates\full_registration.html:96
+#: .\teachUZB_app\templates\full_registration.html:101
+#: .\teachUZB_app\templates\full_registration.html:106
+#: .\teachUZB_app\templates\full_registration.html:110
+#: .\teachUZB_app\templates\full_registration.html:132
+#: .\teachUZB_app\templates\full_registration.html:156
 #: .\teachUZB_app\templates\full_registration.html:174
-#: .\teachUZB_app\templates\full_registration.html:182
+#: .\teachUZB_app\templates\full_registration.html:188
+#: .\teachUZB_app\templates\full_registration.html:197
+#: .\teachUZB_app\templates\full_registration.html:205
 msgid "Заполните поле"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:64
+#: .\teachUZB_app\templates\full_registration.html:65
 msgid "Фамилия"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:69
+#: .\teachUZB_app\templates\full_registration.html:70
 msgid "Электронная почта"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:77
+#: .\teachUZB_app\templates\full_registration.html:78
 msgid "Пол"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:79
+#: .\teachUZB_app\templates\full_registration.html:80
 msgid "Мужчина"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:80
+#: .\teachUZB_app\templates\full_registration.html:81
 msgid "Женщина"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:84
+#: .\teachUZB_app\templates\full_registration.html:85
 msgid "Дата рождения"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:89
+#: .\teachUZB_app\templates\full_registration.html:90
 msgid "Мобильный телефон"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:94
+#: .\teachUZB_app\templates\full_registration.html:95
 msgid "Гражданство"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:99
+#: .\teachUZB_app\templates\full_registration.html:100
 msgid "Место жительства на момент подачи заявки"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:104
+#: .\teachUZB_app\templates\full_registration.html:105
 msgid "Адрес прописки"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:111
+#: .\teachUZB_app\templates\full_registration.html:110
+msgid "Languages"
+msgstr "Языки"
+
+#: .\teachUZB_app\templates\full_registration.html:131
 msgid "Образование"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:115
-#: .\teachUZB_app\templates\full_registration.html:284
+#: .\teachUZB_app\templates\full_registration.html:135
+#: .\teachUZB_app\templates\full_registration.html:309
 msgid "Вуз"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:117
-#: .\teachUZB_app\templates\full_registration.html:285
+#: .\teachUZB_app\templates\full_registration.html:137
+#: .\teachUZB_app\templates\full_registration.html:310
 msgid "Степень"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:119
-#: .\teachUZB_app\templates\full_registration.html:286
+#: .\teachUZB_app\templates\full_registration.html:139
+#: .\teachUZB_app\templates\full_registration.html:311
 msgid "Факультет"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:121
-#: .\teachUZB_app\templates\full_registration.html:287
+#: .\teachUZB_app\templates\full_registration.html:141
+#: .\teachUZB_app\templates\full_registration.html:312
 msgid "Специализация"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:123
-#: .\teachUZB_app\templates\full_registration.html:288
-#: .\teachUZB_app\templates\full_registration.html:304
+#: .\teachUZB_app\templates\full_registration.html:143
+#: .\teachUZB_app\templates\full_registration.html:313
+#: .\teachUZB_app\templates\full_registration.html:329
 msgid "Дата начала"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:126
-#: .\teachUZB_app\templates\full_registration.html:289
-#: .\teachUZB_app\templates\full_registration.html:305
+#: .\teachUZB_app\templates\full_registration.html:146
+#: .\teachUZB_app\templates\full_registration.html:314
+#: .\teachUZB_app\templates\full_registration.html:330
 msgid "Дата окончания"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:127
-#: .\teachUZB_app\templates\full_registration.html:290
-msgid "Скан диплома о высшем образовании или CV, если диплом ещё не получен. Поле не является обязательным для заполнения! pdf, doc, docx, jpg"
+#: .\teachUZB_app\templates\full_registration.html:147
+msgid ""
+"Скан диплома о высшем образовании или CV, если диплом ещё не получен. Поле "
+"не является обязательным для заполнения! pdf, doc, docx, jpg"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:131
-#: .\teachUZB_app\templates\full_registration.html:147
-#: .\teachUZB_app\templates\full_registration.html:160
+#: .\teachUZB_app\templates\full_registration.html:152
+#: .\teachUZB_app\templates\full_registration.html:169
+#: .\teachUZB_app\templates\full_registration.html:183
 msgid "Добавить ещё"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:133
+#: .\teachUZB_app\templates\full_registration.html:154
 msgid "Опыт работы"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:138
+#: .\teachUZB_app\templates\full_registration.html:160
 msgid "Организация"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:140
-#: .\teachUZB_app\templates\full_registration.html:303
+#: .\teachUZB_app\templates\full_registration.html:162
+#: .\teachUZB_app\templates\full_registration.html:328
 msgid "Должность"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:149
+#: .\teachUZB_app\templates\full_registration.html:171
 msgid "Общественная деятельность"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:150
+#: .\teachUZB_app\templates\full_registration.html:172
 msgid ""
 "Укажите, пожалуйста, в каких социальных проектах вы принимали участие за "
 "последние 5 лет"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:155
-#: .\teachUZB_app\templates\full_registration.html:302
-#: .\teachUZB_app\templates\full_registration.html:316
+#: .\teachUZB_app\templates\full_registration.html:178
+#: .\teachUZB_app\templates\full_registration.html:327
+#: .\teachUZB_app\templates\full_registration.html:341
 msgid "Компания"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:157
-#: .\teachUZB_app\templates\full_registration.html:317
+#: .\teachUZB_app\templates\full_registration.html:180
+#: .\teachUZB_app\templates\full_registration.html:342
 msgid "Тип активности"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:162
+#: .\teachUZB_app\templates\full_registration.html:185
 msgid "Участие в программе"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:164
+#: .\teachUZB_app\templates\full_registration.html:187
 msgid "Как вы узнали о проекте"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:167
+#: .\teachUZB_app\templates\full_registration.html:190
 msgid "Вебсайт"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:169
+#: .\teachUZB_app\templates\full_registration.html:192
 msgid "Другое"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:173
+#: .\teachUZB_app\templates\full_registration.html:196
 msgid ""
 "Сможете ли вы работать полный рабочий день, принимая участие в Teach for "
 "Uzebkistan?"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:176
-#: .\teachUZB_app\templates\full_registration.html:184
+#: .\teachUZB_app\templates\full_registration.html:199
+#: .\teachUZB_app\templates\full_registration.html:207
 msgid "Да"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:177
-#: .\teachUZB_app\templates\full_registration.html:185
+#: .\teachUZB_app\templates\full_registration.html:200
+#: .\teachUZB_app\templates\full_registration.html:208
 msgid "Нет"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:181
+#: .\teachUZB_app\templates\full_registration.html:204
 msgid ""
 "Сможете ли вы принять участие в Летнем институте (июль - август 2024, около "
 "5 недель, Ташкент)?"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:189
+#: .\teachUZB_app\templates\full_registration.html:212
 msgid ""
 "Почему вы хотите стать стипендиатом программы «Teach for Uzbekistan»? "
 "Пожалуйста, дайте развернутый ответ в форме эссе. *:"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:190
-#: .\teachUZB_app\templates\full_registration.html:201
-#: .\teachUZB_app\templates\full_registration.html:212
+#: .\teachUZB_app\templates\full_registration.html:213
+#: .\teachUZB_app\templates\full_registration.html:224
+#: .\teachUZB_app\templates\full_registration.html:236
 msgid "Количества символов должны быть больше 1000 и меньше 3000"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:200
+#: .\teachUZB_app\templates\full_registration.html:223
 msgid ""
 "Как вы думаете, в чем ваша ценность для детей и школы? Пожалуйста, дайте "
 "развернутый ответ в форме эссе. *:"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:211
+#: .\teachUZB_app\templates\full_registration.html:235
 msgid ""
 "Какую пользу вам может принести опыт участия в программе? Пожалуйста, дайте "
 "развернутый ответ в форме эссе. *:"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:221
+#: .\teachUZB_app\templates\full_registration.html:246
 msgid "Нажимая кнопку «отправить» вы подтверждаете своё согласие"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:225
+#: .\teachUZB_app\templates\full_registration.html:250
 msgid "Отправить"
 msgstr ""
 
-#: .\teachUZB_app\templates\full_registration.html:292
-#: .\teachUZB_app\templates\full_registration.html:306
-#: .\teachUZB_app\templates\full_registration.html:318
+#: .\teachUZB_app\templates\full_registration.html:315
+msgid "Скан диплома о высшем образовании"
+msgstr ""
+
+#: .\teachUZB_app\templates\full_registration.html:317
+#: .\teachUZB_app\templates\full_registration.html:331
+#: .\teachUZB_app\templates\full_registration.html:343
 msgid "Удалить"
 msgstr ""
 
@@ -383,27 +397,23 @@ msgstr ""
 msgid "Как могут выглядеть следующие два года вашей карьеры?"
 msgstr ""
 
-#: .\teachUZB_app\templates\home.html:63
-msgid "Расскажем подробнее:"
-msgstr ""
-
-#: .\teachUZB_app\templates\home.html:92
+#: .\teachUZB_app\templates\home.html:91
 msgid "3 задачи проекта"
 msgstr ""
 
-#: .\teachUZB_app\templates\home.html:104
+#: .\teachUZB_app\templates\home.html:103
 msgid "Улучшить академическую успеваемость школьников"
 msgstr ""
 
-#: .\teachUZB_app\templates\home.html:116
+#: .\teachUZB_app\templates\home.html:115
 msgid "Снизить дефицит педагогических кадров в региональных школах"
 msgstr ""
 
-#: .\teachUZB_app\templates\home.html:128
+#: .\teachUZB_app\templates\home.html:127
 msgid "Внедрить лучшие образовательные практики"
 msgstr ""
 
-#: .\teachUZB_app\templates\home.html:143
+#: .\teachUZB_app\templates\home.html:142
 msgid "Отзывы"
 msgstr ""
 

@@ -207,6 +207,7 @@ def full_registration(request):
         personal_data.citizenship = request.POST.get("personal_citezenship")
         personal_data.which_city = request.POST.get("personal_which_city")
         personal_data.registered_address = request.POST.get("personal_registered_address")
+        personal_data.language = request.POST.getlist("language")
         personal_data.save()
 
         participationinprogram = ParticipationInProgram()
